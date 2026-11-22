@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="bin\x64\Release\net10.0\assets\backgroundSprite.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dependencies\FNA\FNA.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="bin\x64\Release\net10.0\assets\backgroundSprite.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\x64\Release\net10.0\assets\cheeseburgerSpriteSUPER.png" />
+    <None Include="bin\x64\Release\net10.0\assets\dungeon1.png" />
+    <None Include="bin\x64\Release\net10.0\assets\dungeon2.png" />
+    <None Include="bin\x64\Release\net10.0\assets\dungeon3.png" />
+    <None Include="bin\x64\Release\net10.0\assets\enemylvl2Sprite.png" />
+    <None Include="bin\x64\Release\net10.0\assets\enemySprite.png" />
+    <None Include="bin\x64\Release\net10.0\assets\intro.png" />
+    <None Include="bin\x64\Release\net10.0\assets\newJaspser.png" />
+    <None Include="bin\x64\Release\net10.0\assets\rangedSprite.png" />
+    <None Include="bin\x64\Release\net10.0\assets\showerbossSprite.png" />
+    <None Include="bin\x64\Release\net10.0\assets\TankSprite.png" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,12 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="../Dependencies/FNA/FNA.csproj" Id="35253ce1-c864-4cd3-8249-4d1319748e8f">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="Cheeseburger_Chucker2/Cheeseburger_Chucker2.csproj">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+</Solution>
