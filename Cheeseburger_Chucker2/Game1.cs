@@ -17,6 +17,8 @@ namespace Cheeseburger_Chucker2
 
         private readonly Player1 _player;
 
+        private readonly FPS_Handler _fpsManager;
+
         private SpriteBatch _spriteBatch = null!;
 
         private float write_time = 0.0f;
@@ -37,6 +39,7 @@ namespace Cheeseburger_Chucker2
             _assetManager = new();
             _controller = new();
             _player = new();
+            _fpsManager = new();
         }
 
 
@@ -68,13 +71,7 @@ namespace Cheeseburger_Chucker2
 
             _player.Move(_controller, dt);
 
-            write_time++;
-            if (write_time >= write_delay)
-            {
-                write_time = 0.0f;
-
-                Console.WriteLine($"FPS: {(int)(1 / dt)}");
-            }
+            _fpsManager.WriteFPS(dt);
     
             base.Update(gameTime);
         }
