@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "V8AOQtQldz0=",
+  "success": true,
+  "projectFilePath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\SDL2-CS\\SDL2-CS.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\chevy\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.33\\microsoft.net.illink.tasks.8.0.33.nupkg.sha512",
+    "C:\\Users\\chevy\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\chevy\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.3\\microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
+    "C:\\Users\\chevy\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net40\\1.0.3\\microsoft.netframework.referenceassemblies.net40.1.0.3.nupkg.sha512",
+    "C:\\Users\\chevy\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\chevy\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.33\\microsoft.netcore.app.ref.8.0.33.nupkg.sha512",
+    "C:\\Users\\chevy\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.33\\microsoft.windowsdesktop.app.ref.8.0.33.nupkg.sha512",
+    "C:\\Users\\chevy\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.33\\microsoft.aspnetcore.app.ref.8.0.33.nupkg.sha512"
+  ],
+  "logs": []
+}

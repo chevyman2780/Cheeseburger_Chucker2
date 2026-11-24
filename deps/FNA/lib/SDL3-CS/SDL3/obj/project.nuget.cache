@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "/CakqSo1hsE=",
+  "success": true,
+  "projectFilePath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\SDL3-CS\\SDL3\\SDL3.Legacy.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\chevy\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.3\\microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
+    "C:\\Users\\chevy\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net40\\1.0.3\\microsoft.netframework.referenceassemblies.net40.1.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

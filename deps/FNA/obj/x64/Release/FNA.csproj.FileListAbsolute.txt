@@ -1,0 +1,5 @@
+C:\Programming\C#\Dependencies\FNA\bin\Release\FNA.dll.config
+C:\Programming\C#\Dependencies\FNA\bin\Release\FNA.dll
+C:\Programming\C#\Dependencies\FNA\obj\x64\Release\FNA.csproj.AssemblyReference.cache
+C:\Programming\C#\Dependencies\FNA\obj\x64\Release\FNA.csproj.CoreCompileInputs.cache
+C:\Programming\C#\Dependencies\FNA\obj\x64\Release\FNA.dll
