@@ -28,6 +28,7 @@
     <Compile Remove="deps/FNA/**" />
     <None Remove="deps/FNA/**" />
     <EmbeddedResource Remove="deps/FNA/**" />
+    <None Include="assets/**" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
     <Target Name="FnaNatives" AfterTargets="Build">

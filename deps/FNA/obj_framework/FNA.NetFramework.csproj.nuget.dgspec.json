@@ -1,0 +1,64 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\FNA.NetFramework.csproj": {}
+  },
+  "projects": {
+    "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\FNA.NetFramework.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\FNA.NetFramework.csproj",
+        "projectName": "FNA",
+        "projectPath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\FNA.NetFramework.csproj",
+        "packagesPath": "C:\\Users\\chevy\\.nuget\\packages\\",
+        "outputPath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\obj_framework\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "C:\\Users\\chevy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net4.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net4.0": {
+            "framework": "net40",
+            "targetAlias": "net4.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.400"
+      },
+      "frameworks": {
+        "net4.0": {
+          "framework": "net40",
+          "targetAlias": "net4.0",
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
