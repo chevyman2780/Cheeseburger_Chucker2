@@ -1,4 +1,6 @@
 <Project>
+
+
     <PropertyGroup>
         <OutputPath>build/</OutputPath>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
@@ -11,8 +13,9 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
         <FNADir>$(MSBuildProjectDirectory)/deps/FNA</FNADir>
-        <FNALibs>$(FnaDir)/fnalibs</FNALibs>
+        <NativeDir>$(FNADir)/fnalibs</NativeDir>
     </PropertyGroup>
 
     <ItemGroup>
@@ -26,13 +29,16 @@
     <EmbeddedResource Remove="deps/FNA/**" />
   </ItemGroup>
 
-    <Target Name="FNALibs" AfterTargets="Build">
-        <ItemGroup>
-        <NativeLib Condition= "$([MSBuild]::IsOSPlatform('Windows'))" Include="$(FNALibs)/x64/*.dll"></NativeLib>
-        </ItemGroup>
-
-        <Copy SourceFiles="@(FNALibs)" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true"></Copy>
-    </Target>
+    <Target Name="FnaNatives" AfterTargets="Build">
+    <ItemGroup>
+      <NativeLib Condition="$([MSBuild]::IsOSPlatform('Windows'))" Include="$(NativeDir)/x64/*.dll" />
+      <NativeLib Condition="$([MSBuild]::IsOSPlatform('Linux'))"   Include="$(NativeDir)/lib64/*.so*" />
+      <NativeLib Condition="$([MSBuild]::IsOSPlatform('OSX'))"     Include="$(NativeDir)/osx/*.dylib" />
+    </ItemGroup>
+    <Warning Condition="'@(NativeLib)' == ''"
+             Text="No native libs found in $(NativeDir). Put the fnalibs folders (x64, lib64, osx) there." />
+    <Copy SourceFiles="@(NativeLib)" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" />
+  </Target>
 
     <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
 </Project>
