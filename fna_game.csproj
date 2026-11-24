@@ -19,7 +19,7 @@
     <EmbeddedResource Remove="fna/**" />
     <Compile Remove="fnalibs/**" />
     <None Remove="fnalibs/**" />
-    <None Include="assets_src/**" Link="assets/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="assets/**" Link="assets/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>

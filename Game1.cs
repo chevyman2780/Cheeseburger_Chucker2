@@ -1,9 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace Cheeseburger_Chucker2
 { 
@@ -20,9 +16,6 @@ namespace Cheeseburger_Chucker2
         private readonly FPS_Handler _fpsManager;
 
         private SpriteBatch _spriteBatch = null!;
-
-        private float write_time = 0.0f;
-        private readonly float write_delay = 1000.0f;
 
         public Game1()
         {
