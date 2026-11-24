@@ -1,0 +1,38 @@
+<Project>
+    <PropertyGroup>
+        <OutputPath>build/</OutputPath>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <BaseIntermediateOutputPath>$(MSBuildProjectDirectory)/build/obj/</BaseIntermediateOutputPath>
+        <IntermediateOutputPath>$(MSBuildProjectDirectory)/build/obj/</IntermediateOutputPath>
+    </PropertyGroup>
+
+    <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net10.0</TargetFramework>
+        <FNADir>$(MSBuildProjectDirectory)/deps/FNA</FNADir>
+        <FNALibs>$(FnaDir)/fnalibs</FNALibs>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="$(FNADir)/FNA.Core.csproj" />
+    </ItemGroup>
+
+      <!-- Don't compile FNA's source as part of the game; it's built via the project reference -->
+  <ItemGroup>
+    <Compile Remove="deps/FNA/**" />
+    <None Remove="deps/FNA/**" />
+    <EmbeddedResource Remove="deps/FNA/**" />
+  </ItemGroup>
+
+    <Target Name="FNALibs" AfterTargets="Build">
+        <ItemGroup>
+        <NativeLib Condition= "$([MSBuild]::IsOSPlatform('Windows'))" Include="$(FNALibs)/x64/*.dll"></NativeLib>
+        </ItemGroup>
+
+        <Copy SourceFiles="@(FNALibs)" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true"></Copy>
+    </Target>
+
+    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
+</Project>
