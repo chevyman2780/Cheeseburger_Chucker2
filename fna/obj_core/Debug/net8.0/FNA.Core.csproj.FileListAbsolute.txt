@@ -21,3 +21,14 @@ C:\Users\user\Documents\code\brantley\fna-game\fna\obj_core\Debug\net8.0\refint\
 C:\Users\user\Documents\code\brantley\fna-game\fna\obj_core\Debug\net8.0\FNA.pdb
 C:\Users\user\Documents\code\brantley\fna-game\fna\obj_core\Debug\net8.0\ref\FNA.dll
 C:\Users\user\Documents\code\brantley\fna-game\fna\obj_core\Debug\net8.0\FNA.Core.csproj.Up2Date
+C:\Programming\C#\Cheeseburger_Chucker2\Cheeseburger_Chucker2\fna-game\fna\bin\Debug\net8.0\FNA.dll.config
+C:\Programming\C#\Cheeseburger_Chucker2\Cheeseburger_Chucker2\fna-game\fna\bin\Debug\net8.0\FNA.deps.json
+C:\Programming\C#\Cheeseburger_Chucker2\Cheeseburger_Chucker2\fna-game\fna\bin\Debug\net8.0\FNA.dll
+C:\Programming\C#\Cheeseburger_Chucker2\Cheeseburger_Chucker2\fna-game\fna\bin\Debug\net8.0\FNA.pdb
+C:\Programming\C#\Cheeseburger_Chucker2\Cheeseburger_Chucker2\fna-game\fna\obj_core\Debug\net8.0\FNA.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programming\C#\Cheeseburger_Chucker2\Cheeseburger_Chucker2\fna-game\fna\obj_core\Debug\net8.0\FNA.Core.csproj.CoreCompileInputs.cache
+C:\Programming\C#\Cheeseburger_Chucker2\Cheeseburger_Chucker2\fna-game\fna\obj_core\Debug\net8.0\FNA.Core.sourcelink.json
+C:\Programming\C#\Cheeseburger_Chucker2\Cheeseburger_Chucker2\fna-game\fna\obj_core\Debug\net8.0\FNA.dll
+C:\Programming\C#\Cheeseburger_Chucker2\Cheeseburger_Chucker2\fna-game\fna\obj_core\Debug\net8.0\refint\FNA.dll
+C:\Programming\C#\Cheeseburger_Chucker2\Cheeseburger_Chucker2\fna-game\fna\obj_core\Debug\net8.0\FNA.pdb
+C:\Programming\C#\Cheeseburger_Chucker2\Cheeseburger_Chucker2\fna-game\fna\obj_core\Debug\net8.0\ref\FNA.dll
