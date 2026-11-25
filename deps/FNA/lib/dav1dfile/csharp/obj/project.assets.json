@@ -185,22 +185,20 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\dav1dfile\\csharp\\dav1dfile-CS.csproj",
+      "projectUniqueName": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\dav1dfile\\csharp\\dav1dfile-CS.csproj",
       "projectName": "dav1dfile-CS",
-      "projectPath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\dav1dfile\\csharp\\dav1dfile-CS.csproj",
+      "projectPath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\dav1dfile\\csharp\\dav1dfile-CS.csproj",
       "packagesPath": "C:\\Users\\chevy\\.nuget\\packages\\",
-      "outputPath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\dav1dfile\\csharp\\obj\\",
+      "outputPath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\dav1dfile\\csharp\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "configFilePaths": [
-        "C:\\Users\\chevy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\chevy\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -245,7 +243,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.404\\RuntimeIdentifierGraph.json"
       }
     }
   }

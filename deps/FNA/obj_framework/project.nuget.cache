@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DqPzEO2zkXI=",
+  "dgSpecHash": "yHcfVmJ3Cwg=",
   "success": true,
-  "projectFilePath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\FNA.NetFramework.csproj",
+  "projectFilePath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\FNA.NetFramework.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chevy\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.3\\microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
     "C:\\Users\\chevy\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net40\\1.0.3\\microsoft.netframework.referenceassemblies.net40.1.0.3.nupkg.sha512"

@@ -3,13 +3,12 @@ using System.Text.Json;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-
 namespace Cheeseburger_Chucker2.src;
 
 internal class AssetManager
 {
     private Dictionary<string, Texture2D> _textures;
-    string _textureJsonPath = "assets/jsons/textures.json";
+    readonly string  _textureJsonPath = "assets/jsons/textures.json";
 
     public SpriteBatch batch;
 

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SDL3.Legacy")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b5ccb57dc9bbbf6bdb41a50218804f7f38beb6f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+65c64f4c81df4289bc470d7b841931165756beec")]
 [assembly: System.Reflection.AssemblyProductAttribute("SDL3.Legacy")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SDL3.Legacy")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

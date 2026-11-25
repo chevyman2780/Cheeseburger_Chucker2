@@ -42,7 +42,7 @@
       }
     },
     "net8.0": {
-      "Microsoft.NET.ILLink.Tasks/8.0.33": {
+      "Microsoft.NET.ILLink.Tasks/8.0.34": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
@@ -51,10 +51,10 @@
     }
   },
   "libraries": {
-    "Microsoft.NET.ILLink.Tasks/8.0.33": {
-      "sha512": "dG9SM/0/zOTIE1UvSrveD1iDyEJjThqPqSnreExgqQWSoGWvze0esDi0faRk3C44IO1kqCeEX6AeCxWmBOppfw==",
+    "Microsoft.NET.ILLink.Tasks/8.0.34": {
+      "sha512": "AoMGwI/388svzARQ2NYC25vFOQGcf13FgQWv61TwPAdPUMOejXpQxBQHrQpXfqM7vqxxj1E3SAkX/OkE2cuChw==",
       "type": "package",
-      "path": "microsoft.net.illink.tasks/8.0.33",
+      "path": "microsoft.net.illink.tasks/8.0.34",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -68,7 +68,7 @@
         "build/Microsoft.NET.ILLink.Analyzers.props",
         "build/Microsoft.NET.ILLink.Tasks.props",
         "build/Microsoft.NET.ILLink.targets",
-        "microsoft.net.illink.tasks.8.0.33.nupkg.sha512",
+        "microsoft.net.illink.tasks.8.0.34.nupkg.sha512",
         "microsoft.net.illink.tasks.nuspec",
         "tools/net472/ILLink.Tasks.dll",
         "tools/net472/ILLink.Tasks.dll.config",
@@ -673,7 +673,7 @@
       "Microsoft.NETFramework.ReferenceAssemblies >= 1.0.3"
     ],
     "net8.0": [
-      "Microsoft.NET.ILLink.Tasks >= 8.0.33"
+      "Microsoft.NET.ILLink.Tasks >= 8.0.34"
     ],
     "netstandard2.0": [
       "NETStandard.Library >= 2.0.3"
@@ -685,16 +685,15 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\SDL2-CS\\SDL2-CS.Core.csproj",
+      "projectUniqueName": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\SDL2-CS\\SDL2-CS.Core.csproj",
       "projectName": "SDL2-CS",
-      "projectPath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\SDL2-CS\\SDL2-CS.Core.csproj",
+      "projectPath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\SDL2-CS\\SDL2-CS.Core.csproj",
       "packagesPath": "C:\\Users\\chevy\\.nuget\\packages\\",
-      "outputPath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\SDL2-CS\\obj\\",
+      "outputPath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\SDL2-CS\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "configFilePaths": [
-        "C:\\Users\\chevy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\chevy\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net40",
@@ -702,7 +701,6 @@
         "netstandard2.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -746,7 +744,7 @@
             "autoReferenced": true
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.404\\RuntimeIdentifierGraph.json"
       },
       "net8.0": {
         "framework": "net8.0",
@@ -755,7 +753,7 @@
           "Microsoft.NET.ILLink.Tasks": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[8.0.33, )",
+            "version": "[8.0.34, )",
             "autoReferenced": true
           }
         },
@@ -773,15 +771,15 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.33, 8.0.33]"
+            "version": "[8.0.34, 8.0.34]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.33, 8.0.33]"
+            "version": "[8.0.34, 8.0.34]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.33, 8.0.33]"
+            "version": "[8.0.34, 8.0.34]"
           }
         ],
         "frameworkReferences": {
@@ -789,7 +787,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.404/PortableRuntimeIdentifierGraph.json"
       },
       "netstandard2.0": {
         "framework": "netstandard2.0",
@@ -813,7 +811,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.404\\RuntimeIdentifierGraph.json"
       }
     }
   }

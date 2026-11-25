@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Q3jsN7dK+Ok=",
+  "dgSpecHash": "trBB4xOSbJ4=",
   "success": true,
-  "projectFilePath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\Theorafile\\csharp\\Theorafile-CS.Core.csproj",
+  "projectFilePath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\Theorafile\\csharp\\Theorafile-CS.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chevy\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\chevy\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.3\\microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",

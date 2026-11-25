@@ -1,28 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\FNA.NetFramework.csproj": {}
+    "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\FNA.NetFramework.csproj": {}
   },
   "projects": {
-    "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\FNA.NetFramework.csproj": {
+    "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\FNA.NetFramework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\FNA.NetFramework.csproj",
+        "projectUniqueName": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\FNA.NetFramework.csproj",
         "projectName": "FNA",
-        "projectPath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\FNA.NetFramework.csproj",
+        "projectPath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\FNA.NetFramework.csproj",
         "packagesPath": "C:\\Users\\chevy\\.nuget\\packages\\",
-        "outputPath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\obj_framework\\",
+        "outputPath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\obj_framework\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [
-          "C:\\Users\\chevy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\chevy\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net4.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -56,7 +54,7 @@
               "autoReferenced": true
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }

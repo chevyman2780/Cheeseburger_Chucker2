@@ -1,6 +1,4 @@
 <Project>
-
-
     <PropertyGroup>
         <OutputPath>build/</OutputPath>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>

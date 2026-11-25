@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "/CakqSo1hsE=",
+  "dgSpecHash": "Tx0fe+/D+Cg=",
   "success": true,
-  "projectFilePath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\SDL3-CS\\SDL3\\SDL3.Legacy.csproj",
+  "projectFilePath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\SDL3-CS\\SDL3\\SDL3.Core.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\chevy\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.3\\microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
-    "C:\\Users\\chevy\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net40\\1.0.3\\microsoft.netframework.referenceassemblies.net40.1.0.3.nupkg.sha512"
+    "C:\\Users\\chevy\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.34\\microsoft.netcore.app.ref.8.0.34.nupkg.sha512",
+    "C:\\Users\\chevy\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.34\\microsoft.windowsdesktop.app.ref.8.0.34.nupkg.sha512",
+    "C:\\Users\\chevy\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.34\\microsoft.aspnetcore.app.ref.8.0.34.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\SDL3-CS\\GenerateBindings\\GenerateBindings.csproj": {}
+    "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\SDL3-CS\\GenerateBindings\\GenerateBindings.csproj": {}
   },
   "projects": {
-    "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\SDL3-CS\\GenerateBindings\\GenerateBindings.csproj": {
+    "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\SDL3-CS\\GenerateBindings\\GenerateBindings.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\SDL3-CS\\GenerateBindings\\GenerateBindings.csproj",
+        "projectUniqueName": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\SDL3-CS\\GenerateBindings\\GenerateBindings.csproj",
         "projectName": "GenerateBindings",
-        "projectPath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\SDL3-CS\\GenerateBindings\\GenerateBindings.csproj",
+        "projectPath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\SDL3-CS\\GenerateBindings\\GenerateBindings.csproj",
         "packagesPath": "C:\\Users\\chevy\\.nuget\\packages\\",
-        "outputPath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\SDL3-CS\\GenerateBindings\\obj\\",
+        "outputPath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\lib\\SDL3-CS\\GenerateBindings\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\chevy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\chevy\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -61,19 +59,19 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.33, 8.0.33]"
+              "version": "[8.0.34, 8.0.34]"
             },
             {
               "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[8.0.33, 8.0.33]"
+              "version": "[8.0.34, 8.0.34]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.33, 8.0.33]"
+              "version": "[8.0.34, 8.0.34]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.33, 8.0.33]"
+              "version": "[8.0.34, 8.0.34]"
             }
           ],
           "frameworkReferences": {
@@ -81,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
