@@ -1,3 +1,4 @@
 {
-    "player": "assets/images/newJaspser.png"
+    "player": "assets/images/newJaspser.png",
+    "tank": "assets/images/TankSprite.png"
 }

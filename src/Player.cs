@@ -32,6 +32,11 @@ internal class Player
         _playerWeapon = new(_assetManager, "burger");
     }
 
+    public Vector2 GetPosition()
+    {
+        return _Position;
+    }
+
     private void CheckBounds(int _windowWidth, int _windowHeight)
     {
         if (_Position.X + _playerWidth > _windowWidth)
