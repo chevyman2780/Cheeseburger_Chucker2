@@ -25,6 +25,11 @@ internal class Player
         _playerHeight = _playerTexture.Height;
     }
 
+    public Vector2 GetPosition()
+    {
+        return _Position;
+    }
+
     private void CheckBounds(int _windowWidth, int _windowHeight)
     {
         if (_Position.X + _playerWidth > _windowWidth)
