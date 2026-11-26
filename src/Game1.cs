@@ -8,11 +8,11 @@ internal class Game1 : Game
 {
     private readonly GraphicsDeviceManager _GDM;
 
-    private readonly AssetManager _assetManager;
+    private AssetManager _assetManager;
 
-    private readonly Controller _controller;
+    private Controller _controller;
 
-    private readonly Player _player1;
+    private Player _player1;
 
     public Game1()
     {
@@ -23,19 +23,23 @@ internal class Game1 : Game
             IsFullScreen = false,
             SynchronizeWithVerticalRetrace = true
         };
-
-        _assetManager = new();
-        _controller = new();
-        _player1 = new();
     }
+
     protected override void Initialize()
     {
+        _assetManager = new();
+
+        _controller = new();
+
         base.Initialize();
     }
 
     protected override void LoadContent()
     {
         _assetManager.LoadTextures(GraphicsDevice);
+
+        _player1 = new(_assetManager);
+        
         base.LoadContent();
     }
 
@@ -48,7 +52,7 @@ internal class Game1 : Game
     {
         double dt = gameTime.ElapsedGameTime.TotalSeconds;
 
-        _player1.Update(_controller, dt);
+        _player1.Update(_controller, dt, Window.ClientBounds.Width, Window.ClientBounds.Height);
 
         base.Update(gameTime);
     }

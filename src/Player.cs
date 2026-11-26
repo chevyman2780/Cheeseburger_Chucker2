@@ -12,12 +12,42 @@ internal class Player
 
     private readonly float _playerSpeed = 300f;
 
-    private readonly string _playerTexture = "player";
+    private readonly string _playerTextureName = "player";
+    private Texture2D _playerTexture;
+    private readonly int _playerWidth;
+    private readonly int _playerHeight;
+
+    public Player(AssetManager _assetManager)
+    {
+        _playerTexture = _assetManager.GetTexture(_playerTextureName);
+
+        _playerWidth = _playerTexture.Width;
+        _playerHeight = _playerTexture.Height;
+    }
+
+    private void CheckBounds(int _windowWidth, int _windowHeight)
+    {
+        if (_Position.X + _playerWidth > _windowWidth)
+        {
+            _Position.X = _windowWidth - _playerWidth;
+        } else if (_Position.X < 0)
+        {
+            _Position.X = 0;
+        }
+
+        if (_Position.Y + _playerHeight > _windowHeight)
+        {
+            _Position.Y = _windowHeight - _playerHeight;
+        } else if (_Position.Y < 0)
+        {
+            _Position.Y = 0;
+        }
+    }
 
     private void Move(Controller _controller, double dt)
     {
         _Direction = Vector2.Zero;
-        
+
         if (_controller.ReadMoveInput(Keys.D)) { _Direction.X = 1; }
         if (_controller.ReadMoveInput(Keys.A)) { _Direction.X = -1; }
         if (_controller.ReadMoveInput(Keys.S)) { _Direction.Y = 1; }
@@ -32,15 +62,14 @@ internal class Player
         _Position.Y += _Direction.Y * _playerSpeed * (float)dt;
     }
 
-    public void Update(Controller _controller, double dt)
+    public void Update(Controller _controller, double dt, int _windowWidth, int _windowHeight)
     {
+        CheckBounds(_windowWidth, _windowHeight);
         Move(_controller, dt);
     }
 
     public void Draw(AssetManager _assetManager)
     {
-        Texture2D texture = _assetManager.GetTexture(_playerTexture);
-
-        _assetManager.batch.Draw(texture, _Position, Color.White);
+        _assetManager.batch.Draw(_playerTexture, _Position, Color.White);
     }
 }
