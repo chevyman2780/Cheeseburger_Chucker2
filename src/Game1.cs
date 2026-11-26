@@ -14,6 +14,8 @@ internal class Game1 : Game
 
     private Player _player1;
 
+    private TankEnemy _tankEnemy; // enemy test, delete later
+
     public Game1()
     {
         _GDM = new(this)
@@ -52,7 +54,10 @@ internal class Game1 : Game
         _assetManager.LoadTextures(GraphicsDevice);
 
         _player1 = new(_assetManager);
-        
+
+        _tankEnemy = new(); // enemy test, delete later
+        _tankEnemy.Initialize(_assetManager); // enemy test, delete later
+
         base.LoadContent();
     }
 
@@ -67,6 +72,8 @@ internal class Game1 : Game
 
         _player1.Update(_controller, dt, Window.ClientBounds.Width, Window.ClientBounds.Height);
 
+        _tankEnemy.Update(_player1.GetPosition(), dt); // enemy test, delete later
+
         base.Update(gameTime);
     }
 
@@ -76,6 +83,8 @@ internal class Game1 : Game
         _assetManager.batch.Begin();
 
         _player1.Draw(_assetManager);
+
+        _tankEnemy.Draw(_assetManager); // enemy test, delete later
 
         _assetManager.batch.End();
         

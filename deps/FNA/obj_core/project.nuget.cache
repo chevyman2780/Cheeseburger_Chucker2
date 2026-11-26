@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "JuJce8MSUp8=",
+  "dgSpecHash": "A8l9SDgUVT8=",
   "success": true,
-  "projectFilePath": "/run/media/deck/SD512/Programming/C#/Cheeseburger_Chucker2/deps/FNA/FNA.Core.csproj",
+  "projectFilePath": "C:\\Users\\user\\Documents\\code\\brantley\\Cheeseburger_Chucker2-chevyman2780\\deps\\FNA\\FNA.Core.csproj",
   "expectedPackageFiles": [
-    "/home/deck/.nuget/packages/microsoft.netcore.app.ref/8.0.34/microsoft.netcore.app.ref.8.0.34.nupkg.sha512",
-    "/home/deck/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.34/microsoft.aspnetcore.app.ref.8.0.34.nupkg.sha512"
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.34\\microsoft.netcore.app.ref.8.0.34.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.34\\microsoft.windowsdesktop.app.ref.8.0.34.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.34\\microsoft.aspnetcore.app.ref.8.0.34.nupkg.sha512"
   ],
   "logs": []
 }
