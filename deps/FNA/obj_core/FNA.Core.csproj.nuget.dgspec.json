@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\FNA.Core.csproj": {}
+    "/run/media/deck/SD512/Programming/C#/Cheeseburger_Chucker2/deps/FNA/FNA.Core.csproj": {}
   },
   "projects": {
-    "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\FNA.Core.csproj": {
+    "/run/media/deck/SD512/Programming/C#/Cheeseburger_Chucker2/deps/FNA/FNA.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\FNA.Core.csproj",
+        "projectUniqueName": "/run/media/deck/SD512/Programming/C#/Cheeseburger_Chucker2/deps/FNA/FNA.Core.csproj",
         "projectName": "FNA",
-        "projectPath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\FNA.Core.csproj",
-        "packagesPath": "C:\\Users\\chevy\\.nuget\\packages\\",
-        "outputPath": "C:\\Programming\\C#\\Cheeseburger_Chucker2\\Cheeseburger_Chucker2\\deps\\FNA\\obj_core\\",
+        "projectPath": "/run/media/deck/SD512/Programming/C#/Cheeseburger_Chucker2/deps/FNA/FNA.Core.csproj",
+        "packagesPath": "/home/deck/.nuget/packages/",
+        "outputPath": "/run/media/deck/SD512/Programming/C#/Cheeseburger_Chucker2/deps/FNA/obj_core/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\chevy\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/deck/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -39,7 +39,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "11.0.100"
+        "SdkAnalysisLevel": "10.0.400"
       },
       "frameworks": {
         "net8.0": {
@@ -64,10 +64,6 @@
             {
               "name": "Microsoft.NETCore.App.Ref",
               "version": "[8.0.34, 8.0.34]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.34, 8.0.34]"
             }
           ],
           "frameworkReferences": {
@@ -75,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\11.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/deck/.dotnet/sdk/10.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

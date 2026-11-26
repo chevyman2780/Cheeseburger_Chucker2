@@ -10,6 +10,10 @@ internal class Game1 : Game
 
     private readonly AssetManager _assetManager;
 
+    private readonly Controller _controller;
+
+    private readonly Player _player1;
+
     public Game1()
     {
         _GDM = new(this)
@@ -21,6 +25,8 @@ internal class Game1 : Game
         };
 
         _assetManager = new();
+        _controller = new();
+        _player1 = new();
     }
     protected override void Initialize()
     {
@@ -40,6 +46,10 @@ internal class Game1 : Game
 
     protected override void Update(GameTime gameTime)
     {
+        double dt = gameTime.ElapsedGameTime.TotalSeconds;
+
+        _player1.Update(_controller, dt);
+
         base.Update(gameTime);
     }
 
@@ -47,8 +57,11 @@ internal class Game1 : Game
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
         _assetManager.batch.Begin();
-        _assetManager.batch.Draw(_assetManager.GetTexture("player"), Vector2.Zero, Color.White);
+
+        _player1.Draw(_assetManager);
+
         _assetManager.batch.End();
+        
         base.Draw(gameTime);
     }
 }

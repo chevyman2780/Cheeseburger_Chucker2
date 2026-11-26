@@ -1,6 +1,6 @@
 is_global = true
 build_property.RootNamespace = SDL2
-build_property.ProjectDir = C:\Programming\C#\Cheeseburger_Chucker2\Cheeseburger_Chucker2\deps\FNA\lib\SDL2-CS\
+build_property.ProjectDir = /run/media/deck/SD512/Programming/C#/Cheeseburger_Chucker2/deps/FNA/lib/SDL2-CS/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTUseWindowsUIXamlProjections = false
