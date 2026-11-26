@@ -64,8 +64,8 @@ internal class Player
 
     public void Update(Controller _controller, double dt, int _windowWidth, int _windowHeight)
     {
-        CheckBounds(_windowWidth, _windowHeight);
         Move(_controller, dt);
+        CheckBounds(_windowWidth, _windowHeight);
     }
 
     public void Draw(AssetManager _assetManager)

@@ -30,8 +30,21 @@ internal class Game1 : Game
         _assetManager = new();
 
         _controller = new();
+        Window.AllowUserResizing = true;
+        Window.ClientSizeChanged += OnClientSizeChanged; // subscribe to window resize event
 
         base.Initialize();
+    }
+
+    private void OnClientSizeChanged(object sender, EventArgs e)
+    {
+        int newWidth = Window.ClientBounds.Width;
+        int newHeight = Window.ClientBounds.Height;
+        if (newWidth == 0 || newHeight == 0) return;
+
+        _GDM.PreferredBackBufferWidth = newWidth;
+        _GDM.PreferredBackBufferHeight = newHeight;
+        _GDM.ApplyChanges();
     }
 
     protected override void LoadContent()
