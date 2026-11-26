@@ -11,5 +11,6 @@ internal class TankEnemy : Enemy
     public TankEnemy()
     {
         _id = "tank";
+        _health = 200;
     }
 }

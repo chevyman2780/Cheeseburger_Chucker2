@@ -13,16 +13,18 @@ internal class Enemy
     protected Vector2 _position;
     protected readonly float _movementSpeed = 50f;
 
-    protected string _id;
-
     protected Texture2D[] _textures;
 
-    protected int _enemyWidth;
-    protected int _enemyHeight;
+    protected int _width;
+    protected int _height;
+
+    protected string _id;
+    protected int _health;
 
     public Enemy() 
     {
         _id = "default";
+        _health = 0;
     }
 
     public void Initialize(AssetManager assetManager) 
@@ -30,8 +32,8 @@ internal class Enemy
         _textures = new Texture2D[1];
         _textures[0] = assetManager.GetTexture(_id); // update this in the future to support animations. will throw error if you don't change the id from "default"
 
-        _enemyWidth = _textures[0].Width;
-        _enemyHeight = _textures[0].Height;
+        _width = _textures[0].Width;
+        _height = _textures[0].Height;
     }
 
     public void Update(Vector2 targetPosition, double dt)
@@ -47,11 +49,21 @@ internal class Enemy
     protected void MoveToTarget(Vector2 targetPosition, double dt)
     {
         Vector2 directionToTarget = Vector2.Normalize(targetPosition - _position); // calculate direction
+        bool directionInvalid = (float.IsNaN(directionToTarget.X) || float.IsNaN(directionToTarget.Y));
 
-        // if the enemy position is the same as target position, the direction becomes NaN
-        if (float.IsNaN(directionToTarget.X) || float.IsNaN(directionToTarget.Y)) return; // prevents errors
+        if (directionInvalid) return;
 
         _position.X += directionToTarget.X * _movementSpeed * (float)dt;
         _position.Y += directionToTarget.Y * _movementSpeed * (float)dt;
+    }
+
+    public int GetHealth()
+    {
+        return _health;
+    }
+
+    public void SetHealth(int health)
+    {
+        _health = health;
     }
 }
