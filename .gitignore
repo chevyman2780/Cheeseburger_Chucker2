@@ -1,2 +1,4 @@
 build/
+deps/FNA/bin/
+deps/FNA/obj/
 deps/FNA/obj_core/
