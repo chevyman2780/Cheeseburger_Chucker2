@@ -49,7 +49,8 @@ internal class Game1 : Game
 
     protected override void LoadContent()
     {
-        _assetManager.LoadTextures(GraphicsDevice);
+        _assetManager.LoadTextures(GraphicsDevice, "textures");
+        _assetManager.LoadTextures(GraphicsDevice, "weapons");
 
         _player1 = new(_assetManager);
         
@@ -65,7 +66,7 @@ internal class Game1 : Game
     {
         double dt = gameTime.ElapsedGameTime.TotalSeconds;
 
-        _player1.Update(_controller, dt, Window.ClientBounds.Width, Window.ClientBounds.Height);
+        _player1.Update(_controller, dt, Window.ClientBounds.Width, Window.ClientBounds.Height, _assetManager);
 
         base.Update(gameTime);
     }

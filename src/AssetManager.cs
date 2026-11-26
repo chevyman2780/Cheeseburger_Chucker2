@@ -8,7 +8,7 @@ namespace Cheeseburger_Chucker2.src;
 internal class AssetManager
 {
     private Dictionary<string, Texture2D> _textures;
-    readonly string  _textureJsonPath = "assets/jsons/textures.json";
+    string  _textureJsonPath;
 
     public SpriteBatch batch;
 
@@ -17,8 +17,10 @@ internal class AssetManager
         _textures = [];
     }
 
-    public void LoadTextures(GraphicsDevice GD)
+    public void LoadTextures(GraphicsDevice GD, string jsonName)
     {
+        _textureJsonPath = $"assets/jsons/{jsonName}.json";
+
         string _textureJsonText = File.ReadAllText(_textureJsonPath);
 
         using JsonDocument document = JsonDocument.Parse(_textureJsonText);
