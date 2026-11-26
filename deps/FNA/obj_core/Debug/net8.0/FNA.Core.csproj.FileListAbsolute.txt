@@ -52,3 +52,15 @@ C:/Programming/C#/Cheeseburger_Chucker2/Cheeseburger_Chucker2/deps/FNA/obj_core/
 /run/media/deck/SD512/Programming/C#/Cheeseburger_Chucker2/deps/FNA/obj_core/Debug/net8.0/refint/FNA.dll
 /run/media/deck/SD512/Programming/C#/Cheeseburger_Chucker2/deps/FNA/obj_core/Debug/net8.0/FNA.pdb
 /run/media/deck/SD512/Programming/C#/Cheeseburger_Chucker2/deps/FNA/obj_core/Debug/net8.0/ref/FNA.dll
+C:\Users\user\Documents\code\brantley\Cheeseburger_Chucker2-chevyman2780\deps\FNA\bin\Debug\net8.0\FNA.dll.config
+C:\Users\user\Documents\code\brantley\Cheeseburger_Chucker2-chevyman2780\deps\FNA\bin\Debug\net8.0\FNA.deps.json
+C:\Users\user\Documents\code\brantley\Cheeseburger_Chucker2-chevyman2780\deps\FNA\bin\Debug\net8.0\FNA.dll
+C:\Users\user\Documents\code\brantley\Cheeseburger_Chucker2-chevyman2780\deps\FNA\bin\Debug\net8.0\FNA.pdb
+C:\Users\user\Documents\code\brantley\Cheeseburger_Chucker2-chevyman2780\deps\FNA\obj_core\Debug\net8.0\FNA.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Documents\code\brantley\Cheeseburger_Chucker2-chevyman2780\deps\FNA\obj_core\Debug\net8.0\FNA.Core.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\code\brantley\Cheeseburger_Chucker2-chevyman2780\deps\FNA\obj_core\Debug\net8.0\FNA.Core.sourcelink.json
+C:\Users\user\Documents\code\brantley\Cheeseburger_Chucker2-chevyman2780\deps\FNA\obj_core\Debug\net8.0\FNA.dll
+C:\Users\user\Documents\code\brantley\Cheeseburger_Chucker2-chevyman2780\deps\FNA\obj_core\Debug\net8.0\refint\FNA.dll
+C:\Users\user\Documents\code\brantley\Cheeseburger_Chucker2-chevyman2780\deps\FNA\obj_core\Debug\net8.0\FNA.pdb
+C:\Users\user\Documents\code\brantley\Cheeseburger_Chucker2-chevyman2780\deps\FNA\obj_core\Debug\net8.0\ref\FNA.dll
+C:\Users\user\Documents\code\brantley\Cheeseburger_Chucker2-chevyman2780\deps\FNA\obj_core\Debug\net8.0\FNA.Core.csproj.Up2Date
