@@ -12,11 +12,16 @@ internal class BurgerBlaster : Gun
     public override int Damage => 10; // how much damage does the gun do
     protected override float _muzzleVelocity => 400;
 
-    public BurgerBlaster(Player player, AssetManager assetManager)
+    public BurgerBlaster(Player player, AssetManager assetManager, Scene scene)
     {
         _player = player;
+        _assetManager = assetManager;
+        _scene = scene;
+
         Width = assetManager.GetTextureWidth(Tag);
         Height = assetManager.GetTextureHeight(Tag);
+    
+        _cooldown = 0;
     }
 
     public override void Update(double dt)
@@ -29,10 +34,36 @@ internal class BurgerBlaster : Gun
         if (_flippedHorizontally) arbitaryOffset = new Vector2(-40, 55);
         Vector2 newPosition = _player.Position + arbitaryOffset;
         Position = newPosition;
+    
+        if (_player.IsFiring())
+        {
+            Shoot();
+        }
+
+        if (_cooldown - dt > 0)
+        {
+            _cooldown -= dt;
+        }
+        else
+        {
+            _cooldown = 0;
+        }
     }
 
-    public void Shoot(Vector2 direction)
+    public override void Shoot()
     {
-        
+        if (_cooldown > 0) return;
+
+        Vector2 velocity = Vector2.Zero;
+        if (!_player.IsFlippedHorizontally()) velocity = new Vector2(1, 0) * _muzzleVelocity;
+        if (_player.IsFlippedHorizontally()) velocity = new Vector2(-1, 0) * _muzzleVelocity;
+
+        Burger burger = new Burger(_assetManager, Position, velocity);
+
+        _scene.AddEntity(burger);
+
+        double cooldownDivider = 1;
+        if (_player.HasEffect(StatusEffect.Rapidfire)) cooldownDivider = 5;
+        _cooldown = 0.5 / cooldownDivider;
     }
 }

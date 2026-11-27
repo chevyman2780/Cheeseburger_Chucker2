@@ -42,6 +42,7 @@ internal class Game1 : Game
     {
         _assetManager.LoadTextures(GraphicsDevice, "textures");
         Rectangle window = Window.ClientBounds;
+        _scene.OnWindowResize(window);
         // initial load start
 
         Player player = new Player(_assetManager, _controller, window);
@@ -60,12 +61,14 @@ internal class Game1 : Game
         _scene.AddEntity(tankEnemy3);
 
         Speedboost speedboost = new(_assetManager);
-
         speedboost.SetPosition(new Vector2(500, 500));
-
         _scene.AddEntity(speedboost);
 
-        _scene.AddEntity(new BurgerBlaster(player, _assetManager));
+        Rapidfire rapidfire = new(_assetManager);
+        rapidfire.SetPosition(new Vector2(600, 100));
+        _scene.AddEntity(rapidfire);
+
+        _scene.AddEntity(new BurgerBlaster(player, _assetManager, _scene));
 
         // initial load end
         base.LoadContent();

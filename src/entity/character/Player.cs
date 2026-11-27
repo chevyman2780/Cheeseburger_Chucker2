@@ -16,6 +16,7 @@ internal class Player : Character
     private Rectangle _window;
 
     private string _facing;
+    private bool _firing; // is the player shooting or not shooting currently
 
     public Player(AssetManager assetManager, Controller controller, Rectangle window)
     {
@@ -67,11 +68,8 @@ internal class Player : Character
             direction.Y = -1;
         }
 
-        if (direction == Vector2.Zero) return;
+        Move(direction, dt);
 
-        float speedMultiplier = 1;
-        if (HasEffect(StatusEffect.Speedboost)) speedMultiplier = 2;
-        Position += direction * _movementSpeed * (float)dt * speedMultiplier;
 
         if (_facing == "LEFT")
         {
@@ -85,7 +83,25 @@ internal class Player : Character
 
         if (controller.ReadMoveInput(Keys.Space))
         {
-            // do weapon stuff
+            _firing = true;
         }
+        else if (!controller.ReadMoveInput(Keys.Space))
+        {
+            _firing = false;
+        }
+    }
+
+    private void Move(Vector2 direction, double dt)
+    {
+        if (direction == Vector2.Zero) return;
+
+        float speedMultiplier = 1;
+        if (HasEffect(StatusEffect.Speedboost)) speedMultiplier = 2;
+        Position += direction * _movementSpeed * (float)dt * speedMultiplier;
+    }
+
+    public bool IsFiring()
+    {
+        return _firing;
     }
 }

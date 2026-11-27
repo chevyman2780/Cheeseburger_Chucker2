@@ -3,5 +3,6 @@
     "tank": "assets/images/TankSprite.png",
     "burger": "assets/images/cheeseburgerSpriteSUPER.png",
     "speedboost": "assets/images/speedboost.png",
+    "rapidfire": "assets/images/RAPIDFIRE.png",
     "burger-blaster": "assets/images/burgerRifle3.png"
 }

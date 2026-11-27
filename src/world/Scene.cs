@@ -10,10 +10,13 @@ internal class Scene
 {
     // entities includes the player, enemies, projectiles, powerups, anything like that on screen
     private List<Entity> _entities = new List<Entity>();
+    private readonly List<Entity> _pendingAdd = new List<Entity>(); // add a queue so that it doesn't add a new entity while still going through _entities list
+
+    private Rectangle _window;
 
     public Scene()
     {
-
+        
     }
 
     public void Update(double dt)
@@ -21,11 +24,24 @@ internal class Scene
         foreach (var entity in _entities)
         {
             entity.Update(dt);
+
+            // remove any entities that go off screen (primarily projectiles to stop lag)
+            Rectangle cullComparisonRect = new Rectangle(0, 0, _window.Width, _window.Height); // remove X and Y coordinates from _window
+            if (!entity.Rect.Intersects(cullComparisonRect))
+            {
+                entity.Kill();
+            }
         }
 
         CollisionCheck();
 
         _entities.RemoveAll(entity => entity.IsDead);
+
+        foreach (var e in _pendingAdd)
+        {
+            FinalizeAdd(e);
+        }
+        _pendingAdd.Clear();
         // add logic down here to randomly spawn powerups every 15-30 seconds
     }
 
@@ -40,9 +56,14 @@ internal class Scene
 
     public void AddEntity(Entity entity)
     {
+        _pendingAdd.Add(entity);   // never touches _entities directly
+    }
+
+    private void FinalizeAdd(Entity entity)
+    {
         _entities.Add(entity);
 
-        if (entity is not Enemy enemy) return; // creates a usable `enemy` variable if the entity being added *is* an enemy
+        if (entity is not Enemy enemy) return;
         foreach (var possiblePlayer in _entities)
         {
             if (possiblePlayer is Player player)
@@ -55,11 +76,12 @@ internal class Scene
     // update entities that need window information whenever the window is resized
     public void OnWindowResize(Rectangle window)
     {
+        _window = window;
         foreach (var possiblePlayer in _entities)
         {
             if (possiblePlayer is Player player)
             {
-                player.OnWindowResize(window);
+                player.OnWindowResize(_window);
             }
         }
     }
