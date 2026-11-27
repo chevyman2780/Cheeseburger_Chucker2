@@ -6,15 +6,14 @@ namespace Cheeseburger_Chucker2.src;
 
 internal class Game1 : Game
 {
-    private readonly GraphicsDeviceManager _GDM;
-
-    private AssetManager _assetManager;
-
+    private readonly GraphicsDeviceManager _GDM; // why not _graphicsDeviceManager?
+    private AssetManager _assetManager; // why not _AM?
     private Controller _controller;
+    private Scene _scene;
 
-    private Player _player1;
+    // private Player _player;
 
-    private TankEnemy _tankEnemy; // enemy test, delete later
+    // private TankEnemy _tankEnemy; // enemy test, delete later
 
     public Game1()
     {
@@ -30,35 +29,36 @@ internal class Game1 : Game
     protected override void Initialize()
     {
         _assetManager = new();
-
         _controller = new();
+        _scene = new();
+
         Window.AllowUserResizing = true;
         Window.ClientSizeChanged += OnClientSizeChanged; // subscribe to window resize event
 
         base.Initialize();
     }
 
-    private void OnClientSizeChanged(object sender, EventArgs e)
-    {
-        int newWidth = Window.ClientBounds.Width;
-        int newHeight = Window.ClientBounds.Height;
-        if (newWidth == 0 || newHeight == 0) return;
-
-        _GDM.PreferredBackBufferWidth = newWidth;
-        _GDM.PreferredBackBufferHeight = newHeight;
-        _GDM.ApplyChanges();
-    }
-
     protected override void LoadContent()
     {
         _assetManager.LoadTextures(GraphicsDevice, "textures");
-        _assetManager.LoadTextures(GraphicsDevice, "weapons");
+        Rectangle window = Window.ClientBounds;
+        // initial load start
 
-        _player1 = new(_assetManager);
+        _scene.AddEntity(new Player(_assetManager, _controller, window));
 
-        _tankEnemy = new(); // enemy test, delete later
-        _tankEnemy.Initialize(_assetManager); // enemy test, delete later
+        TankEnemy tankEnemy1 = new();
+        TankEnemy tankEnemy2 = new();
+        TankEnemy tankEnemy3 = new();
 
+        tankEnemy1.SetPosition(new Vector2(100, 100));
+        tankEnemy2.SetPosition(new Vector2(400, 200));
+        tankEnemy3.SetPosition(new Vector2(200, 300));
+
+        _scene.AddEntity(tankEnemy1);
+        _scene.AddEntity(tankEnemy2);
+        _scene.AddEntity(tankEnemy3);
+
+        // initial load end
         base.LoadContent();
     }
 
@@ -70,11 +70,11 @@ internal class Game1 : Game
     protected override void Update(GameTime gameTime)
     {
         double dt = gameTime.ElapsedGameTime.TotalSeconds;
+        // update start
 
-        _player1.Update(_controller, dt, Window.ClientBounds.Width, Window.ClientBounds.Height, _assetManager);
+        _scene.Update(dt);
 
-        _tankEnemy.Update(_player1.GetPosition(), dt); // enemy test, delete later
-
+        // update end
         base.Update(gameTime);
     }
 
@@ -82,13 +82,26 @@ internal class Game1 : Game
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
         _assetManager.batch.Begin();
+        // drawing start
 
-        _player1.Draw(_assetManager);
+        _scene.Draw(_assetManager);
 
-        _tankEnemy.Draw(_assetManager); // enemy test, delete later
-
+        // drawing end
         _assetManager.batch.End();
-        
         base.Draw(gameTime);
+    }
+
+    private void OnClientSizeChanged(object sender, EventArgs e)
+    {
+        int newWidth = Window.ClientBounds.Width;
+        int newHeight = Window.ClientBounds.Height;
+        if (newWidth == 0 || newHeight == 0) return;
+
+        _GDM.PreferredBackBufferWidth = newWidth;
+        _GDM.PreferredBackBufferHeight = newHeight;
+        _GDM.ApplyChanges();
+
+        Rectangle window = Window.ClientBounds;
+        _scene.OnWindowResize(window);
     }
 }

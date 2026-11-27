@@ -6,64 +6,29 @@ using Microsoft.Xna.Framework;
 
 namespace Cheeseburger_Chucker2.src;
 
-// this is the parent class for all the enemies. do not use this class for instantiating enemies
-internal class Enemy
+internal abstract class Enemy : Entity
 {
-    // all these must be protected instead of private since they will be used by child classes
-    protected Vector2 _position;
-    protected readonly float _movementSpeed = 50f;
+    protected Entity _targetEntity;
 
-    protected Texture2D[] _textures;
-
-    protected int _width;
-    protected int _height;
-
-    protected string _id;
-    protected int _health;
-
-    public Enemy() 
+    public override void Update(double dt)
     {
-        _id = "default";
-        _health = 0;
+        if (_targetEntity == null) return;
+        MoveToTarget(_targetEntity.Position, dt);
     }
 
-    public void Initialize(AssetManager assetManager) 
+    public void SetTarget(Entity entity)
     {
-        _textures = new Texture2D[1];
-        _textures[0] = assetManager.GetTexture(_id); // update this in the future to support animations. will throw error if you don't change the id from "default"
-
-        _width = _textures[0].Width;
-        _height = _textures[0].Height;
-    }
-
-    public void Update(Vector2 targetPosition, double dt)
-    {
-        MoveToTarget(targetPosition, dt);
-    }
-
-    public void Draw(AssetManager assetManager)
-    {
-        assetManager.batch.Draw(_textures[0], _position, Color.White); // update this in the future to support animations
+        _targetEntity = entity;
     }
 
     protected void MoveToTarget(Vector2 targetPosition, double dt)
     {
-        Vector2 directionToTarget = Vector2.Normalize(targetPosition - _position); // calculate direction
-        bool directionInvalid = (float.IsNaN(directionToTarget.X) || float.IsNaN(directionToTarget.Y));
+        Vector2 offset = targetPosition - Position;
+        if (offset == Vector2.Zero) return;
 
-        if (directionInvalid) return;
-
-        _position.X += directionToTarget.X * _movementSpeed * (float)dt;
-        _position.Y += directionToTarget.Y * _movementSpeed * (float)dt;
-    }
-
-    public int GetHealth()
-    {
-        return _health;
-    }
-
-    public void SetHealth(int health)
-    {
-        _health = health;
+        Vector2 direction = Vector2.Normalize(offset);
+        Position += direction * _movementSpeed * (float)dt;
+        // _position.X += directionToTarget.X * _movementSpeed * (float)dt;
+        // _position.Y += directionToTarget.Y * _movementSpeed * (float)dt;
     }
 }
