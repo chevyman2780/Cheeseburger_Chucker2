@@ -16,7 +16,7 @@ internal class Scene
 
     }
 
-    public void UpdateScene(double dt)
+    public void Update(double dt)
     {
         foreach (var entity in _entities)
         {
@@ -26,7 +26,7 @@ internal class Scene
         // add logic down here to randomly spawn powerups every 15-30 seconds
     }
 
-    public void DrawScene(AssetManager assetManager)
+    public void Draw(AssetManager assetManager)
     {
         foreach (var entity in _entities)
         {
@@ -36,14 +36,28 @@ internal class Scene
 
     public void AddEntity(Entity entity)
     {
-        // add entity target for enemies
-
         _entities.Add(entity);
+
+        if (entity is not Enemy enemy) return; // creates a usable `enemy` variable if the entity being added *is* an enemy
+        foreach (var possiblePlayer in _entities)
+        {
+            if (possiblePlayer is Player player)
+            {
+                enemy.SetTarget(player);
+            }
+        }
     }
 
+    // update entities that need window information whenever the window is resized
     public void OnWindowResize(Rectangle window)
     {
-
+        foreach (var possiblePlayer in _entities)
+        {
+            if (possiblePlayer is Player player)
+            {
+                player.OnWindowResize(window);
+            }
+        }
     }
 
     // public bool CollisionCheck()

@@ -27,4 +27,9 @@ internal abstract class Entity
     {
         assetManager.DrawTexture(Tag, Position);
     }
+
+    public virtual void SetPosition(Vector2 position)
+    {
+        Position = position;
+    }
 }

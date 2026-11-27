@@ -46,6 +46,18 @@ internal class Game1 : Game
 
         _scene.AddEntity(new Player(_assetManager, _controller, window));
 
+        TankEnemy tankEnemy1 = new();
+        TankEnemy tankEnemy2 = new();
+        TankEnemy tankEnemy3 = new();
+
+        tankEnemy1.SetPosition(new Vector2(100, 100));
+        tankEnemy2.SetPosition(new Vector2(400, 200));
+        tankEnemy3.SetPosition(new Vector2(200, 300));
+
+        _scene.AddEntity(tankEnemy1);
+        _scene.AddEntity(tankEnemy2);
+        _scene.AddEntity(tankEnemy3);
+
         // initial load end
         base.LoadContent();
     }
@@ -60,7 +72,7 @@ internal class Game1 : Game
         double dt = gameTime.ElapsedGameTime.TotalSeconds;
         // update start
 
-        _scene.UpdateScene(dt);
+        _scene.Update(dt);
 
         // update end
         base.Update(gameTime);
@@ -72,7 +84,7 @@ internal class Game1 : Game
         _assetManager.batch.Begin();
         // drawing start
 
-        _scene.DrawScene(_assetManager);
+        _scene.Draw(_assetManager);
 
         // drawing end
         _assetManager.batch.End();
@@ -88,5 +100,8 @@ internal class Game1 : Game
         _GDM.PreferredBackBufferWidth = newWidth;
         _GDM.PreferredBackBufferHeight = newHeight;
         _GDM.ApplyChanges();
+
+        Rectangle window = Window.ClientBounds;
+        _scene.OnWindowResize(window);
     }
 }
