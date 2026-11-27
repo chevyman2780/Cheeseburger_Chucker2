@@ -21,27 +21,29 @@ internal abstract class Entity
 
     public bool IsDead { get; protected set; } // check this to see if it should be removed from the scene
 
-    protected bool _drawFromRectangle = false;
+    protected bool _flippedHorizontally = false;
 
     public abstract void Update(double dt);
     public virtual void Draw(AssetManager assetManager)
     {
-        // planning on having every entity be drawn using Rectangles, but for now i will leave it off by default
-        Rectangle rect = new Rectangle((int)Position.X, (int)Position.Y, Width, Height);
-        if (_drawFromRectangle)
+        if (!_flippedHorizontally)
         {
-            assetManager.DrawTextureWithRectangle(Tag, rect);
+            assetManager.DrawTexture(Tag, Rect);
         }
         else
         {
-            // DEPRECATED
-            assetManager.DrawTexture(Tag, Position);
+            assetManager.DrawTexture(Tag, Rect, SpriteEffects.FlipHorizontally);
         }
     }
 
     public virtual void SetPosition(Vector2 position)
     {
         Position = position;
+    }
+
+    public virtual bool IsFlippedHorizontally()
+    {
+        return _flippedHorizontally;
     }
 
     public virtual void Kill() => IsDead = true;

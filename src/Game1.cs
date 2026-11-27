@@ -44,11 +44,12 @@ internal class Game1 : Game
         Rectangle window = Window.ClientBounds;
         // initial load start
 
-        _scene.AddEntity(new Player(_assetManager, _controller, window));
+        Player player = new Player(_assetManager, _controller, window);
+        _scene.AddEntity(player);
 
-        TankEnemy tankEnemy1 = new();
-        TankEnemy tankEnemy2 = new();
-        TankEnemy tankEnemy3 = new();
+        TankEnemy tankEnemy1 = new(_assetManager);
+        TankEnemy tankEnemy2 = new(_assetManager);
+        TankEnemy tankEnemy3 = new(_assetManager);
 
         tankEnemy1.SetPosition(new Vector2(100, 100));
         tankEnemy2.SetPosition(new Vector2(400, 200));
@@ -63,6 +64,8 @@ internal class Game1 : Game
         speedboost.SetPosition(new Vector2(500, 500));
 
         _scene.AddEntity(speedboost);
+
+        _scene.AddEntity(new BurgerBlaster(player, _assetManager));
 
         // initial load end
         base.LoadContent();

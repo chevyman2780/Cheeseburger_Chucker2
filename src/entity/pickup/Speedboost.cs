@@ -18,7 +18,6 @@ internal class Speedboost : Powerup
         // Height = assetManager.GetTextureHeight(Tag);
         Width = 75;
         Height = 75;
-        _drawFromRectangle = true;
     }
 
     public override void Update(double dt)

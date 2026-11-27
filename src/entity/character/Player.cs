@@ -29,7 +29,7 @@ internal class Player : Character
 
     public override void Update(double dt)
     {
-        Move(_controller, dt);
+        ProcessInput(_controller, dt);
         CheckBounds(_window);
         UpdateEffects(dt);
     }
@@ -46,7 +46,7 @@ internal class Player : Character
         Position = new Vector2(x, y);
     }
 
-    private void Move(Controller controller, double dt)
+    private void ProcessInput(Controller controller, double dt)
     {
         Vector2 direction = Vector2.Zero;
 
@@ -72,5 +72,20 @@ internal class Player : Character
         float speedMultiplier = 1;
         if (HasEffect(StatusEffect.Speedboost)) speedMultiplier = 2;
         Position += direction * _movementSpeed * (float)dt * speedMultiplier;
+
+        if (_facing == "LEFT")
+        {
+            _flippedHorizontally = true;
+        }
+        else if (_facing == "RIGHT")
+        {
+            _flippedHorizontally = false;
+        }
+
+
+        if (controller.ReadMoveInput(Keys.Space))
+        {
+            // do weapon stuff
+        }
     }
 }
