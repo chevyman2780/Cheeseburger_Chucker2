@@ -6,16 +6,17 @@ using System.Runtime.InteropServices;
 
 namespace Cheeseburger_Chucker2.src;
 
-internal class Player : Entity
+internal class Player : Character
 {
     public override string Tag => "player";
-    protected override float _movementSpeed => 300;
+    protected override float _movementSpeed => 150;
     public override int MaxHealth => 100;
 
     private readonly Controller _controller;
     private Rectangle _window;
 
     private string _facing;
+    private bool _firing; // is the player shooting or not shooting currently
 
     public Player(AssetManager assetManager, Controller controller, Rectangle window)
     {
@@ -29,8 +30,14 @@ internal class Player : Entity
 
     public override void Update(double dt)
     {
-        Move(_controller, dt);
+        ProcessInput(_controller, dt);
         CheckBounds(_window);
+        UpdateEffects(dt);
+
+        if (Health < 0)
+        {
+            Kill();
+        }
     }
 
     public void OnWindowResize(Rectangle window)
@@ -45,7 +52,7 @@ internal class Player : Entity
         Position = new Vector2(x, y);
     }
 
-    private void Move(Controller controller, double dt)
+    private void ProcessInput(Controller controller, double dt)
     {
         Vector2 direction = Vector2.Zero;
 
@@ -66,8 +73,40 @@ internal class Player : Entity
             direction.Y = -1;
         }
 
+        Move(direction, dt);
+
+
+        if (_facing == "LEFT")
+        {
+            _flippedHorizontally = true;
+        }
+        else if (_facing == "RIGHT")
+        {
+            _flippedHorizontally = false;
+        }
+
+
+        if (controller.ReadMoveInput(Keys.Space))
+        {
+            _firing = true;
+        }
+        else if (!controller.ReadMoveInput(Keys.Space))
+        {
+            _firing = false;
+        }
+    }
+
+    private void Move(Vector2 direction, double dt)
+    {
         if (direction == Vector2.Zero) return;
 
-        Position += direction * _movementSpeed * (float)dt;
+        float speedMultiplier = 1;
+        if (HasEffect(StatusEffect.Speedboost)) speedMultiplier = 2;
+        Position += direction * _movementSpeed * (float)dt * speedMultiplier;
+    }
+
+    public bool IsFiring()
+    {
+        return _firing;
     }
 }

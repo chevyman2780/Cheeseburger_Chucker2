@@ -12,8 +12,20 @@ internal class TankEnemy : Enemy
     protected override float _movementSpeed => 50;
     public override int MaxHealth => 200;
 
-    public TankEnemy()
+    public TankEnemy(AssetManager assetManager)
     {
         Health = MaxHealth;
+        Width = assetManager.GetTextureWidth(Tag);
+        Height = assetManager.GetTextureHeight(Tag);
+    }
+
+    public override void Update(double dt)
+    {
+        base.Update(dt);
+
+        if (Health < 0)
+        {
+            Kill();
+        }
     }
 }

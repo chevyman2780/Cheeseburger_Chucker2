@@ -55,8 +55,27 @@ internal class AssetManager
         return _textures[name].Height;
     }
 
-    public void DrawTexture(string name, Vector2 position)
+    public void DrawTextureOLD(string name, Vector2 position)
     {
         batch.Draw(GetTexture(name), position, Color.White);
+    }
+
+    public void DrawTextureWithRectangle(string name, Rectangle rect)
+    {
+        batch.Draw(GetTexture(name), rect, Color.White);
+    }
+
+    public void DrawTexture(string name, Rectangle rect, SpriteEffects effects = SpriteEffects.None)
+    {
+        batch.Draw(
+            GetTexture(name),
+            rect,
+            null,
+            Color.White,
+            0f,
+            Vector2.Zero,
+            effects,
+            0f
+        );
     }
 }

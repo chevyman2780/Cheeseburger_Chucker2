@@ -30,7 +30,7 @@ internal class Game1 : Game
     {
         _assetManager = new();
         _controller = new();
-        _scene = new();
+        _scene = new(_assetManager);
 
         Window.AllowUserResizing = true;
         Window.ClientSizeChanged += OnClientSizeChanged; // subscribe to window resize event
@@ -42,13 +42,15 @@ internal class Game1 : Game
     {
         _assetManager.LoadTextures(GraphicsDevice, "textures");
         Rectangle window = Window.ClientBounds;
+        _scene.OnWindowResize(window);
         // initial load start
 
-        _scene.AddEntity(new Player(_assetManager, _controller, window));
+        Player player = new Player(_assetManager, _controller, window);
+        _scene.AddEntity(player);
 
-        TankEnemy tankEnemy1 = new();
-        TankEnemy tankEnemy2 = new();
-        TankEnemy tankEnemy3 = new();
+        TankEnemy tankEnemy1 = new(_assetManager);
+        TankEnemy tankEnemy2 = new(_assetManager);
+        TankEnemy tankEnemy3 = new(_assetManager);
 
         tankEnemy1.SetPosition(new Vector2(100, 100));
         tankEnemy2.SetPosition(new Vector2(400, 200));
@@ -57,6 +59,8 @@ internal class Game1 : Game
         _scene.AddEntity(tankEnemy1);
         _scene.AddEntity(tankEnemy2);
         _scene.AddEntity(tankEnemy3);
+
+        _scene.AddEntity(new BurgerBlaster(player, _assetManager, _scene));
 
         // initial load end
         base.LoadContent();
