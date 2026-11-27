@@ -8,9 +8,12 @@ namespace Cheeseburger_Chucker2.src;
 
 internal class TankEnemy : Enemy
 {
+    public override string Tag => "tank";
+    protected override float _movementSpeed => 50;
+    public override int MaxHealth => 200;
+
     public TankEnemy()
     {
-        _id = "tank";
-        _health = 200;
+        Health = MaxHealth;
     }
 }

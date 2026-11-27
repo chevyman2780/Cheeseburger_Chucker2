@@ -6,15 +6,14 @@ namespace Cheeseburger_Chucker2.src;
 
 internal class Game1 : Game
 {
-    private readonly GraphicsDeviceManager _GDM;
-
-    private AssetManager _assetManager;
-
+    private readonly GraphicsDeviceManager _GDM; // why not _graphicsDeviceManager?
+    private AssetManager _assetManager; // why not _AM?
     private Controller _controller;
+    private Scene _scene;
 
-    private Player _player1;
+    // private Player _player;
 
-    private TankEnemy _tankEnemy; // enemy test, delete later
+    // private TankEnemy _tankEnemy; // enemy test, delete later
 
     public Game1()
     {
@@ -30,8 +29,9 @@ internal class Game1 : Game
     protected override void Initialize()
     {
         _assetManager = new();
-
         _controller = new();
+        _scene = new();
+
         Window.AllowUserResizing = true;
         Window.ClientSizeChanged += OnClientSizeChanged; // subscribe to window resize event
 
@@ -52,12 +52,14 @@ internal class Game1 : Game
     protected override void LoadContent()
     {
         _assetManager.LoadTextures(GraphicsDevice, "textures");
-        _assetManager.LoadTextures(GraphicsDevice, "weapons");
+        Rectangle window = Window.ClientBounds;
+        // add initial load stuff after this
 
-        _player1 = new(_assetManager);
+        _scene.AddEntity(new Player(_assetManager, _controller, window));
 
-        _tankEnemy = new(); // enemy test, delete later
-        _tankEnemy.Initialize(_assetManager); // enemy test, delete later
+
+
+
 
         base.LoadContent();
     }
@@ -70,11 +72,11 @@ internal class Game1 : Game
     protected override void Update(GameTime gameTime)
     {
         double dt = gameTime.ElapsedGameTime.TotalSeconds;
+        // update stuff start
 
-        _player1.Update(_controller, dt, Window.ClientBounds.Width, Window.ClientBounds.Height, _assetManager);
+        _scene.UpdateScene(dt);
 
-        _tankEnemy.Update(_player1.GetPosition(), dt); // enemy test, delete later
-
+        // update stuff end
         base.Update(gameTime);
     }
 
@@ -82,13 +84,12 @@ internal class Game1 : Game
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
         _assetManager.batch.Begin();
+        // drawing stuff start
 
-        _player1.Draw(_assetManager);
+        _scene.DrawScene(_assetManager);
 
-        _tankEnemy.Draw(_assetManager); // enemy test, delete later
-
+        // drawing stuff end
         _assetManager.batch.End();
-        
         base.Draw(gameTime);
     }
 }

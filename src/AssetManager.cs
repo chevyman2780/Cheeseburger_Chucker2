@@ -44,4 +44,19 @@ internal class AssetManager
     {
         return _textures[name];
     }
+
+    public int GetTextureWidth(string name)
+    {
+        return _textures[name].Width;
+    }
+
+    public int GetTextureHeight(string name)
+    {
+        return _textures[name].Height;
+    }
+
+    public void DrawTexture(string name, Vector2 position)
+    {
+        batch.Draw(GetTexture(name), position, Color.White);
+    }
 }
