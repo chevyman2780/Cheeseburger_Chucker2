@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Cheeseburger_Chucker2.src;
 
-internal abstract class Enemy : Entity
+internal abstract class Enemy : Character
 {
     protected Entity _targetEntity;
 

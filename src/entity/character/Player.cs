@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 
 namespace Cheeseburger_Chucker2.src;
 
-internal class Player : Entity
+internal class Player : Character
 {
     public override string Tag => "player";
     protected override float _movementSpeed => 300;

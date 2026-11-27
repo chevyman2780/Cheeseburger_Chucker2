@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Cheeseburger_Chucker2.src;
 
+// entities include the player, enemies, and pickups like powerups or ammo
 internal abstract class Entity
 {
     private static int _nextId = 0; // static so all instances share this
@@ -14,13 +15,8 @@ internal abstract class Entity
     public abstract string Tag { get; } // tag is the name/type of the enemy. e.g. "tank". abstract so that it won't compile if you forget to set it
 
     public Vector2 Position { get; protected set; }
-    protected abstract float _movementSpeed { get; } // abstract so that it won't compile if you forget to set _movementSpeed
     public int Width { get; protected set; }
     public int Height { get; protected set; }
-
-    public abstract int MaxHealth { get; } // abstract so that it won't compile if you forget to set it
-    public int Health { get; protected set; }
-    public bool IsDead { get; protected set; }
 
     public abstract void Update(double dt);
     public virtual void Draw(AssetManager assetManager)
