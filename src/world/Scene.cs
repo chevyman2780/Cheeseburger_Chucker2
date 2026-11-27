@@ -60,7 +60,7 @@ internal class Scene
         rapidfire.SetPosition(new Vector2(600, 100));
         AddEntity(rapidfire);
 
-        _powerupTimer = 15;
+        _powerupTimer = 10;
     }
 
     public void Draw(AssetManager assetManager)
