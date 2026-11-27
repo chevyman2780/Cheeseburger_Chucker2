@@ -38,29 +38,15 @@ internal class Game1 : Game
         base.Initialize();
     }
 
-    private void OnClientSizeChanged(object sender, EventArgs e)
-    {
-        int newWidth = Window.ClientBounds.Width;
-        int newHeight = Window.ClientBounds.Height;
-        if (newWidth == 0 || newHeight == 0) return;
-
-        _GDM.PreferredBackBufferWidth = newWidth;
-        _GDM.PreferredBackBufferHeight = newHeight;
-        _GDM.ApplyChanges();
-    }
-
     protected override void LoadContent()
     {
         _assetManager.LoadTextures(GraphicsDevice, "textures");
         Rectangle window = Window.ClientBounds;
-        // add initial load stuff after this
+        // initial load start
 
         _scene.AddEntity(new Player(_assetManager, _controller, window));
 
-
-
-
-
+        // initial load end
         base.LoadContent();
     }
 
@@ -72,11 +58,11 @@ internal class Game1 : Game
     protected override void Update(GameTime gameTime)
     {
         double dt = gameTime.ElapsedGameTime.TotalSeconds;
-        // update stuff start
+        // update start
 
         _scene.UpdateScene(dt);
 
-        // update stuff end
+        // update end
         base.Update(gameTime);
     }
 
@@ -84,12 +70,23 @@ internal class Game1 : Game
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
         _assetManager.batch.Begin();
-        // drawing stuff start
+        // drawing start
 
         _scene.DrawScene(_assetManager);
 
-        // drawing stuff end
+        // drawing end
         _assetManager.batch.End();
         base.Draw(gameTime);
+    }
+
+    private void OnClientSizeChanged(object sender, EventArgs e)
+    {
+        int newWidth = Window.ClientBounds.Width;
+        int newHeight = Window.ClientBounds.Height;
+        if (newWidth == 0 || newHeight == 0) return;
+
+        _GDM.PreferredBackBufferWidth = newWidth;
+        _GDM.PreferredBackBufferHeight = newHeight;
+        _GDM.ApplyChanges();
     }
 }

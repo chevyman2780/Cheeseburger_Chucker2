@@ -4,6 +4,6 @@
 ### to get this running:
 - run `dotnet run`
 ### formatting suggestions:
-classes, class methods, public properties = PascalCase
-class method parameters, local variables = camelCase
-private properties = _ + camelCase
+- classes, class methods, public properties = PascalCase
+- class method parameters, local variables = camelCase
+- private properties = _ + camelCase
