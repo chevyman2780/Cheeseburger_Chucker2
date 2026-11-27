@@ -1,6 +1,6 @@
 {
     "player": "assets/images/newJaspser.png",
     "tank": "assets/images/TankSprite.png",
-    "burger": "assets/images/cheeseburgerSpriteSUPER.png",
+    "projectile": "assets/images/cheeseburgerSpriteSUPER.png",
     "speedboost": "assets/images/speedboost.png"
 }
