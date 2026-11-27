@@ -6,7 +6,23 @@ using Microsoft.Xna.Framework;
 
 namespace Cheeseburger_Chucker2.src;
 
-internal abstract class Speedboost : Entity
+internal class Speedboost : Powerup
 {
+    public override string Tag => "speedboost";
+    public override StatusEffect Effect => StatusEffect.Speedboost;
+    public override double Duration => 5; // duration in seconds
 
+    public Speedboost(AssetManager assetManager)
+    {
+        // Width = assetManager.GetTextureWidth(Tag);
+        // Height = assetManager.GetTextureHeight(Tag);
+        Width = 75;
+        Height = 75;
+        _drawFromRectangle = true;
+    }
+
+    public override void Update(double dt)
+    {
+
+    }
 }

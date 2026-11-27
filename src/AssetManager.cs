@@ -59,4 +59,9 @@ internal class AssetManager
     {
         batch.Draw(GetTexture(name), position, Color.White);
     }
+
+    public void DrawTextureWithRectangle(string name, Rectangle rect)
+    {
+        batch.Draw(GetTexture(name), rect, Color.White);
+    }
 }

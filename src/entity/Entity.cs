@@ -17,15 +17,32 @@ internal abstract class Entity
     public Vector2 Position { get; protected set; }
     public int Width { get; protected set; }
     public int Height { get; protected set; }
+    public Rectangle Rect => new Rectangle((int)Position.X, (int)Position.Y, Width, Height);
+
+    public bool IsDead { get; protected set; } // check this to see if it should be removed from the scene
+
+    protected bool _drawFromRectangle = false;
 
     public abstract void Update(double dt);
     public virtual void Draw(AssetManager assetManager)
     {
-        assetManager.DrawTexture(Tag, Position);
+        // planning on having every entity be drawn using Rectangles, but for now i will leave it off by default
+        Rectangle rect = new Rectangle((int)Position.X, (int)Position.Y, Width, Height);
+        if (_drawFromRectangle)
+        {
+            assetManager.DrawTextureWithRectangle(Tag, rect);
+        }
+        else
+        {
+            // DEPRECATED
+            assetManager.DrawTexture(Tag, Position);
+        }
     }
 
     public virtual void SetPosition(Vector2 position)
     {
         Position = position;
     }
+
+    public virtual void Kill() => IsDead = true;
 }

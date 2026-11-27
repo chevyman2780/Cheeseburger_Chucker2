@@ -58,6 +58,12 @@ internal class Game1 : Game
         _scene.AddEntity(tankEnemy2);
         _scene.AddEntity(tankEnemy3);
 
+        Speedboost speedboost = new(_assetManager);
+
+        speedboost.SetPosition(new Vector2(500, 500));
+
+        _scene.AddEntity(speedboost);
+
         // initial load end
         base.LoadContent();
     }

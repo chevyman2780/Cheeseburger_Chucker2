@@ -9,7 +9,7 @@ namespace Cheeseburger_Chucker2.src;
 internal class Player : Character
 {
     public override string Tag => "player";
-    protected override float _movementSpeed => 300;
+    protected override float _movementSpeed => 150;
     public override int MaxHealth => 100;
 
     private readonly Controller _controller;
@@ -31,6 +31,7 @@ internal class Player : Character
     {
         Move(_controller, dt);
         CheckBounds(_window);
+        UpdateEffects(dt);
     }
 
     public void OnWindowResize(Rectangle window)
@@ -68,6 +69,8 @@ internal class Player : Character
 
         if (direction == Vector2.Zero) return;
 
-        Position += direction * _movementSpeed * (float)dt;
+        float speedMultiplier = 1;
+        if (HasEffect(StatusEffect.Speedboost)) speedMultiplier = 2;
+        Position += direction * _movementSpeed * (float)dt * speedMultiplier;
     }
 }
