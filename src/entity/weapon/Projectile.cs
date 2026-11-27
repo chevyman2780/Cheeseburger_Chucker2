@@ -9,7 +9,7 @@ namespace Cheeseburger_Chucker2.src;
 // do not use this class for instantiating projectiles, this is a parent class
 internal abstract class Projectile : Entity
 {
-    public abstract int Damage;
+    public abstract int Damage { get; }
 
     public override void Update(double dt)
     {
