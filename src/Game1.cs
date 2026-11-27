@@ -30,7 +30,7 @@ internal class Game1 : Game
     {
         _assetManager = new();
         _controller = new();
-        _scene = new();
+        _scene = new(_assetManager);
 
         Window.AllowUserResizing = true;
         Window.ClientSizeChanged += OnClientSizeChanged; // subscribe to window resize event
@@ -59,14 +59,6 @@ internal class Game1 : Game
         _scene.AddEntity(tankEnemy1);
         _scene.AddEntity(tankEnemy2);
         _scene.AddEntity(tankEnemy3);
-
-        Speedboost speedboost = new(_assetManager);
-        speedboost.SetPosition(new Vector2(500, 500));
-        _scene.AddEntity(speedboost);
-
-        Rapidfire rapidfire = new(_assetManager);
-        rapidfire.SetPosition(new Vector2(600, 100));
-        _scene.AddEntity(rapidfire);
 
         _scene.AddEntity(new BurgerBlaster(player, _assetManager, _scene));
 

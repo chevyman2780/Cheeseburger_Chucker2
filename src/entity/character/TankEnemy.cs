@@ -18,4 +18,14 @@ internal class TankEnemy : Enemy
         Width = assetManager.GetTextureWidth(Tag);
         Height = assetManager.GetTextureHeight(Tag);
     }
+
+    public override void Update(double dt)
+    {
+        base.Update(dt);
+
+        if (Health < 0)
+        {
+            Kill();
+        }
+    }
 }

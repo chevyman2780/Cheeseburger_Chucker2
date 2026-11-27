@@ -12,11 +12,15 @@ internal class Scene
     private List<Entity> _entities = new List<Entity>();
     private readonly List<Entity> _pendingAdd = new List<Entity>(); // add a queue so that it doesn't add a new entity while still going through _entities list
 
+    private AssetManager _assetManager;
     private Rectangle _window;
 
-    public Scene()
+    private double _powerupTimer = 0; // how much longer until the next powerups are spawned in the scene
+
+
+    public Scene(AssetManager assetManager)
     {
-        
+        _assetManager = assetManager;
     }
 
     public void Update(double dt)
@@ -43,6 +47,20 @@ internal class Scene
         }
         _pendingAdd.Clear();
         // add logic down here to randomly spawn powerups every 15-30 seconds
+
+        if (_powerupTimer - dt < 0) _powerupTimer = 0;
+        if (_powerupTimer - dt > 0) _powerupTimer = _powerupTimer - dt;
+        if (_powerupTimer > 0) return;
+
+        Speedboost speedboost = new(_assetManager);
+        speedboost.SetPosition(new Vector2(500, 500));
+        AddEntity(speedboost);
+
+        Rapidfire rapidfire = new(_assetManager);
+        rapidfire.SetPosition(new Vector2(600, 100));
+        AddEntity(rapidfire);
+
+        _powerupTimer = 15;
     }
 
     public void Draw(AssetManager assetManager)
@@ -109,6 +127,15 @@ internal class Scene
 
                     player.AddEffect(powerup.Effect, powerup.Duration);
                     powerup.Kill(); // delete powerup after effect is added to player
+                }
+
+                if (enemyPresent && projectilePresent)
+                {
+                    Projectile projectile = firstEntity as Projectile ?? secondEntity as Projectile;
+                    Enemy enemy = firstEntity as Enemy ?? secondEntity as Enemy;
+
+                    enemy.TakeDamage(projectile.Damage);
+                    projectile.Kill();
                 }
             }
         }

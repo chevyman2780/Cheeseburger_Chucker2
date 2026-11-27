@@ -29,10 +29,8 @@ internal abstract class Character : Entity
             _effects[effect] = duration;
         }
     }
-
     public bool HasEffect(StatusEffect effect) => _effects.ContainsKey(effect);
     public void RemoveEffect(StatusEffect effect) => _effects.Remove(effect);
-
     protected void UpdateEffects(double dt)
     {
         _expiredEffects.Clear();
@@ -60,5 +58,11 @@ internal abstract class Character : Entity
         {
             _effects.Remove(key);
         }
+    }
+
+    // apply damage to Character's health
+    public void TakeDamage(int damage)
+    {
+        Health -= damage;
     }
 }

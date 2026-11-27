@@ -33,6 +33,11 @@ internal class Player : Character
         ProcessInput(_controller, dt);
         CheckBounds(_window);
         UpdateEffects(dt);
+
+        if (Health < 0)
+        {
+            Kill();
+        }
     }
 
     public void OnWindowResize(Rectangle window)
